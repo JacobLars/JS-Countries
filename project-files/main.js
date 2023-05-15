@@ -53,6 +53,10 @@ function renderCountryPage(data) {
     document.getElementById('search-form').innerHTML = '';
     document.getElementById('dropdown-container').innerHTML = '';
     for (let country of data) {
+        
+        const nativeNameKey = Object.keys(country.name.nativeName)[0];
+        const nativeName = country.name.nativeName[nativeNameKey].common;
+
 
         const translationList = country.translations;
         const translationKeys = Object.keys(translationList);
@@ -79,7 +83,7 @@ function renderCountryPage(data) {
         <img class="coat-of-arms" src="${country.coatOfArms.png}"></img>
         <p class="region-text">Region: ${country.region}</p>
         <p class="region-text">Subregion: ${country.subregion}</p>
-        <p class="common-name">${country.name.common} | ${country.name.official}</p>
+        <p class="common-name">${country.name.common} | ${country.name.official} | ${nativeName}</p>
         <p>Capital: ${country.capital} </p>
         <p>Currency: ${currencyName} | ${currencySymbol}</p>
         <p>Languages: ${languages}</p>
