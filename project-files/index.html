@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Countries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div id="head_content">
+        <nav>
+            <div>
+                <img src="globe.webp" style="height: 50px; width: 50px;" alt="Globe logo">
+            </div>
+            <a href="index.html">Home</a>
+
+        </nav>
+    </div>
+
+
+
+
+    <main id="main-container">
+        <div id="dropdown-container">
+            <label for="regions">Select Region: </label>
+            <select name="regions" id="regions-dropdown" onchange="getCountriesByRegion(this.value)">
+
+                <option value="Europe">Europe</option>
+                <option value="Africa">Africa</option>
+                <option value="Asia">Asia</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+        <form id="search-form" action="#">
+
+
+
+            <input id="country-name-input" type="text" placeholder="Search for a country...">
+            <button type="submit"
+                onclick="searchCountry(document.getElementById('country-name-input').value)">Search</button>
+        </form>
+        <div id="countries-container"></div>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

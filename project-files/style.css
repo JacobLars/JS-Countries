@@ -1,0 +1,125 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#head_content{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#head_content a{
+    font-size: larger;
+}
+
+#head_content a:hover{
+    background-color: rgb(133, 133, 133);
+    color: white;
+}
+
+
+#dropdown-container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#dropdown-container label{
+    font-size: larger;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#regions-dropdown{
+    height: 30px;
+    font-size: larger;
+
+}
+
+#search-form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+
+
+}
+
+#search-form input{
+    height: 30px;
+    font-size: larger;
+}
+#countries-container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+    background-color: rgb(199, 196, 196);
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.country-container {
+    background-color: rgb(230, 230, 230);
+    margin: 20px;
+    height: 20rem;
+    width: 20rem;
+
+}
+
+.country-container:hover {
+    background-color: rgb(194, 191, 191);
+    cursor: pointer;
+}
+
+.country-container>img,
+p {
+    margin: 10px;
+}
+
+.country-flag {
+    max-height: 200px;
+    max-width: 200px;
+    padding: 5px;
+}
+
+.coat-of-arms{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.common-name {
+    font-weight: bold;
+    font-size: large;
+}
+
+.region-text {
+    color: rgb(102, 102, 102);
+}
+
+
+.country-page-container {
+    background-color: rgb(230, 230, 230);
+    width: 80%;
+}
+
+
+#canvas-for-googlemap {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+
+
+}
+
+#maps-container {
+    max-width:100%;
+    list-style:none; 
+    transition: none;
+    overflow:hidden;
+    width:500px;
+    height:500px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
