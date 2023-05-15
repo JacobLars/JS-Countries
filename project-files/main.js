@@ -47,12 +47,24 @@ function makeSearchCountryRequest(id) {
 
 
 function renderCountryPage(data) {
-    console.log(data);
+
     let output = '';
+   
     document.getElementById('search-form').innerHTML = '';
     document.getElementById('dropdown-container').innerHTML = '';
     for (let country of data) {
 
+        const translationList = country.translations;
+        const translationKeys = Object.keys(translationList);
+        const translations = [];
+
+        for (let i = 0; i < translationKeys.length; i++) {
+            const translationKey = translationKeys[i];
+            const translation = translationList[translationKey];
+            
+            translations.push(`<li class="translation-item">${translation.common} (${translationKey})</li>`);
+           
+        }
 
         const currencyKey = Object.keys(country.currencies)[0];
         const currencyName = country.currencies[currencyKey].name;
@@ -61,7 +73,7 @@ function renderCountryPage(data) {
         const languages = Object.entries(country.languages)
             .map(([code, name]) => `${name} (${code})`)
             .join(", ");
-        console.log(country.timezones);
+
         output += `<div class="country-page-container">
         <img class="country-flag" src="${country.flags.png}"></img></br>
         <img class="coat-of-arms" src="${country.coatOfArms.png}"></img>
@@ -74,12 +86,18 @@ function renderCountryPage(data) {
         <p>Population: ${country.population}</p>
         <p>Area: ${country.area} km²</p>
         <p>Timezones: ${country.timezones}</p>
+        <p>Traffic: ${country.car.side}-hand traffic</p>
         <div id="maps-container">
         <div id="canvas-for-googlemap" style="height:100%; width:100%;max-width:100%;"><iframe
                 style="height:100%;width:100%;border:0;" frameborder="0"
                 src="https://www.google.com/maps/embed/v1/place?q=${country.name.common}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div>
         </div>
+        
+        <ul class="translations-container">
+        <p class="translations-header">Translations</p>
+        ${translations.join("")}
+        </ul>
 
         </div>
         `

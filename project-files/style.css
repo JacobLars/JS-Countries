@@ -123,3 +123,13 @@ p {
     margin: 0 auto;
     padding: 10px;
 }
+
+
+.translations-container{
+    list-style-type: none;
+}
+
+.translations-header{
+    font-size: large;
+    font-weight: bold;
+}
