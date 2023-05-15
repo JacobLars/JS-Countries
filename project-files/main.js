@@ -116,19 +116,3 @@ function getCountriesByRegion(region){
         .then(result => renderCountries(result))
         .catch(error => console.log('error', error));
 }
-
-/* function renderSearchCountries(data) {
-    let output = '';
-
-    for (let country of data) {
-        output += `<div onclick="makeSearchCountryRequest('${country.ccn3}')" class="country-container">
-        <img class="country-flag" src="${country.flags.png}"></img>
-        <p class="region-text">${country.region}</p>
-        <p class="common-name">${country.name.common}</p>
-        </div>
-        `;
-    }
-
-
-    document.getElementById('countries-container').innerHTML = output;
-} */
